@@ -7,11 +7,11 @@ function App() {
   const [items, setItems] = useState([]);
   const [active, setActive] = useState(1);
   const [category, setCategory] = useState("general");
-  const [isLoading, setIsLoading] = useState(false); // New state for loading
-  const [error, setError] = useState(null); // New state for error
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    setIsLoading(true); // Set loading state to true before fetch
+    setIsLoading(true);
     fetch(
       `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${
         import.meta.env.VITE_API_KEY
@@ -20,11 +20,11 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         setItems(data.articles);
-        setIsLoading(false); // Set loading state to false after successful fetch
+        setIsLoading(false);
       })
       .catch((error) => {
         setError(error);
-        setIsLoading(false); // Set loading state to false after error
+        setIsLoading(false);
       });
   }, [category]);
 
@@ -42,11 +42,11 @@ function App() {
             path="/"
             element={
               <div className="w-full min-h-screen flex flex-col justify-center items-center mx-auto">
-                {isLoading ? ( // Display loading message if loading
+                {isLoading ? (
                   <div role="status">
                     <svg
                       aria-hidden="true"
-                      class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-red-600"
+                      class="w-20 h-20 text-gray-200 animate-spin dark:text-gray-600 fill-red-600"
                       viewBox="0 0 100 101"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -62,12 +62,12 @@ function App() {
                     </svg>
                     <span class="sr-only">Loading...</span>
                   </div>
-                ) : error ? ( // Display error message if error
-                  <p>Error fetching news: {error.message}</p>
+                ) : error ? (
+                  <p className="text-2xl text-red-600">
+                    Error fetching news: {error.message}
+                  </p>
                 ) : (
-                  <>
-                    <NewsGrid items={items} />
-                  </>
+                  <>{items && <NewsGrid items={items} />}</>
                 )}
               </div>
             }
