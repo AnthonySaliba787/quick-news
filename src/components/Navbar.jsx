@@ -21,7 +21,7 @@ function Navbar({ active, setActive, setCategory }) {
       <nav className="w-full h-auto sticky top-0 z-10 flex flex-col justify-center items-center mx-auto shadow-xl bg-red-800/90 backdrop-blur-lg text-center">
         <h1 className="text-2xl md:text-3xl text-white font-bold py-4">
           <span>
-            <PiBroadcastBold size={30} className="w-full" />
+            <PiBroadcastBold size={30} className="w-full animate-pulse" />
           </span>
           QUICK NEWS
         </h1>
