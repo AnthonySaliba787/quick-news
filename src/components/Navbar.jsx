@@ -18,7 +18,7 @@ function Navbar({ active, setActive, setCategory }) {
 
   return (
     <>
-      <nav className="w-full h-auto flex flex-col justify-center items-center mx-auto shadow-xl bg-red-800 text-center">
+      <nav className="w-full h-auto sticky top-0 z-10 flex flex-col justify-center items-center mx-auto shadow-xl bg-red-800/90 backdrop-blur-lg text-center">
         <h1 className="text-2xl md:text-3xl text-white font-bold py-4">
           <span>
             <PiBroadcastBold size={30} className="w-full" />
@@ -31,8 +31,8 @@ function Navbar({ active, setActive, setCategory }) {
               key={link.id}
               className={
                 active === link.id
-                  ? "text-base font-normal text-red-500 cursor-pointer p-2 duration-300 hover:text-red-700 border-b-2 border-red-500"
-                  : "text-base font-normal text-white cursor-pointer p-2 hover:text-red-400 duration-300 border-b-2 border-transparent"
+                  ? "text-base font-medium text-red-500 cursor-pointer p-2 duration-300 hover:text-red-700 border-b-2 border-red-500"
+                  : "text-base font-medium text-white cursor-pointer p-2 hover:text-red-400 duration-300 border-b-2 border-transparent"
               }
               onClick={() => onClick(link.id, link.value)}
             >

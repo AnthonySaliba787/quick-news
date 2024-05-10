@@ -16,7 +16,8 @@ function NewsItem({ item }) {
       <>
         <a
           href={websiteUrl}
-          className="max-w-[400px] flex flex-col overflow-hidden rounded-md shadow-xl pb-2 hover:scale-[1.02] duration-300"
+          target="_blank"
+          className="max-w-[400px] flex flex-col overflow-hidden rounded-md shadow-lg pb-2 hover:scale-[1.02] hover:shadow-xl duration-300"
         >
           <div className="w-full h-56 overflow-hidden">
             <img src={imageSrc} alt={item.title} />
