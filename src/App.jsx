@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import NewsGrid from "./components/NewsGrid";
+import { HashRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -19,16 +20,26 @@ function App() {
 
   return (
     <>
-      <div className="w-full min-h-screen flex flex-col justify-center items-center mx-auto">
-        <div className="w-full min-h-screen flex flex-col justify-start items-center">
-          <Navbar
-            active={active}
-            setActive={setActive}
-            setCategory={setCategory}
+      <HashRouter>
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <div className="w-full min-h-screen flex flex-col justify-center items-center mx-auto">
+                <div className="w-full min-h-screen flex flex-col justify-start items-center">
+                  <Navbar
+                    active={active}
+                    setActive={setActive}
+                    setCategory={setCategory}
+                  />
+                  <NewsGrid items={items} />
+                </div>
+              </div>
+            }
           />
-          <NewsGrid items={items} />
-        </div>
-      </div>
+        </Routes>
+      </HashRouter>
     </>
   );
 }
