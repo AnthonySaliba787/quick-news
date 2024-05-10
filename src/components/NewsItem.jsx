@@ -14,23 +14,26 @@ function NewsItem({ item }) {
   if (websiteUrl !== "https://removed.com") {
     return (
       <>
-        <a href={websiteUrl} className="">
-          <div className="">
+        <a
+          href={websiteUrl}
+          className="max-w-[400px] flex flex-col overflow-hidden rounded-md shadow-xl pb-2 hover:scale-[1.02] duration-300"
+        >
+          <div className="w-full h-56 overflow-hidden">
             <img src={imageSrc} alt={item.title} />
           </div>
-          <div className="">
-            <div className="">
+          <div className="flex flex-col justify-between items-start gap-2 flex-grow px-2">
+            <div className="flex justify-start items-center gap-2">
               <img
                 src={`https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE%2CSIZE%2CURL&url=http://${website}&size=16`}
                 alt={item.source.id}
               />
               <span>{item.source.name}</span>
             </div>
-            <div className="">
+            <div className="text-xl font-bold">
               <h2>{item.title}</h2>
             </div>
-            <p className="">{item.description}</p>
-            <div className="">
+            <p className="text-base">{item.description}</p>
+            <div className="text-base">
               <small>
                 <b>Published At: </b>
                 {formatTime}

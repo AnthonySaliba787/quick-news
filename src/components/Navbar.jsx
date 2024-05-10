@@ -1,4 +1,4 @@
-import { FaNewspaper } from "react-icons/fa";
+import { PiBroadcastBold } from "react-icons/pi";
 
 function Navbar({ active, setActive, setCategory }) {
   const links = [
@@ -18,12 +18,12 @@ function Navbar({ active, setActive, setCategory }) {
 
   return (
     <>
-      <nav className="w-full h-auto flex flex-col justify-center items-center mx-auto shadow-xl bg-red-700 text-center">
+      <nav className="w-full h-auto flex flex-col justify-center items-center mx-auto shadow-xl bg-red-800 text-center">
         <h1 className="text-2xl md:text-3xl text-white font-bold py-4">
           <span>
-            <FaNewspaper size={40} className="w-full" />
+            <PiBroadcastBold size={30} className="w-full" />
           </span>
-          Quick News
+          QUICK NEWS
         </h1>
         <ul className="w-full flex flex-row flex-wrap justify-center items-center bg-black shadow-xl">
           {links.map((link) => (
