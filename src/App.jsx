@@ -26,6 +26,7 @@ function App() {
             setActive={setActive}
             setCategory={setCategory}
           />
+          <NewsGrid items={items} />
         </div>
       </div>
     </>
